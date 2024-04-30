@@ -272,7 +272,6 @@ User.hasMany(Key, {
 });
 Key.belongsTo(User);
 
-
 export class Secret extends Model<
   InferAttributes<Secret>,
   InferCreationAttributes<Secret>
@@ -318,10 +317,7 @@ Secret.init(
   {
     modelName: "secrets",
     sequelize: frontSequelize,
-    indexes: [
-      { fields: ["userId"] },
-      { fields: ["workspaceId"] },
-    ],
+    indexes: [{ fields: ["userId"] }, { fields: ["workspaceId"] }],
   }
 );
 Workspace.hasMany(Secret, {
